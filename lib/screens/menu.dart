@@ -1,26 +1,36 @@
+import 'package:book_tracker/screens/login.dart';
 import 'package:flutter/material.dart';
+
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
+
 import 'package:book_tracker/widgets/left_drawer.dart';
 import 'package:book_tracker/widgets/tracker_card.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+    return Provider(
+      create: (_) {
+        CookieRequest request = CookieRequest();
+        return request;
+      },
+      child: MaterialApp(
+        title: 'Flutter App',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigo),
+          useMaterial3: true,
+        ),
+        home: const LoginPage(),
       ),
-      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({Key? key}) : super(key: key);
+  MyHomePage({super.key});
 
   final List<TrackerItem> items = [
     TrackerItem("Lihat Buku", Icons.library_books_rounded),
