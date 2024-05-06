@@ -1,6 +1,6 @@
 # book_tracker
 
-A new Flutter project.
+[![Build status](https://build.appcenter.ms/v0.1/apps/86ead5de-f0ef-49ea-9097-6aedb3daf631/branches/master/badge)](https://appcenter.ms)
 
 ## Getting Started
 
